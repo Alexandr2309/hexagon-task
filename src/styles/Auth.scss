@@ -1,0 +1,41 @@
+.auth {
+  margin-top: 61px;
+  &__title {
+    margin-bottom: calc(49px + 21px);
+    & span {
+      transition: all .3s ease-in;
+      &.active {
+      background: #ffffff;
+
+      }
+      padding: 21px 13.5px;
+      border-radius: 603px;
+    }
+  }
+  &__wrapper {
+    padding: 51px 46px 47px 39px;
+  }
+
+  &__form {
+  }
+
+  &__field {
+  }
+  & label {
+    display: block;
+    margin: 34.5px 0px;
+  }
+  &__submit {
+    margin-top: 91px;
+    text-align: right;
+    & button {
+      padding: 26.5px 23px;
+      border-radius: 30px;
+    }
+  }
+}
+
+.form {
+  &-wrap {
+  }
+}

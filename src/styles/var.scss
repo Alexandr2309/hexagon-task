@@ -1,0 +1,21 @@
+$main-text-color: #000000;
+$secondary-text-color: #ffffff;
+
+$main-bg: linear-gradient(116.54deg, #9bbdff 12.78%, #8b7ddd 87.08%);
+$main-btn-bg: linear-gradient(
+  96.56deg,
+  rgba(192, 90, 255, 0.8) 10.8%,
+  rgba(81, 0, 131, 0.8) 94.44%
+);
+$main-form-bg: rgba(255, 255, 255, 0.4);
+
+$main-font-family: 'Montserrat';
+
+$main-font: 400 20px/24px $main-font-family;
+$layout-font: $main-font $main-font-family;
+$title-font: 400 36px/44px $main-font-family;
+$title-variant-font: 800 25px/30px $main-font-family;
+$secondary-font: 400 18px/22px $main-font-family;
+$table-font: $secondary-font;
+$subtitle-font: 400 25px/39px $main-font-family;
+$btn-font: 600 20px/24px  $main-font-family;

@@ -1,0 +1,85 @@
+.main {
+  &__about {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 140px 0px;
+    background: url('../img/bg-img-main.png') calc(100% + 148px) 0 no-repeat;
+    text-align: left;
+  }
+
+  &__title {
+    font: $title-font;
+    & h1 {
+      display: inline;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+  }
+
+  &__subtitle {
+    font: $subtitle-font;
+    color: $main-text-color;
+    max-width: 469px;
+    margin-top: 34px;
+  }
+
+  & button {
+    margin-top: 35px;
+    border-radius: 60px;
+    padding: 26.5px 23px;
+  }
+}
+.main {
+  padding-bottom: 105px;
+  &__translator {
+  }
+}
+
+.form-wrap {
+  @extend %form-bg;
+  font: $main-font;
+  & input {
+    border-radius: 20px;
+    background: $main-form-bg;
+    width: 100%;
+    padding: 28px;
+    font: $main-font;
+  }
+}
+
+.translator {
+  &__wrapper {
+    padding: 34px 42.5px 41px;
+  }
+  &__title {
+  }
+  &__field {
+    margin-top: 33px;
+  }
+  & button {
+    margin-top: 26px;
+    border-radius: 28px;
+    padding: 22.5px 36px;
+  }
+  &__submit {
+    text-align: right;
+  }
+}
+
+@media (max-width: 989px) {
+  .main {
+    &__about {
+      background: unset;
+    }
+    &__title {
+      font-size: 200%;
+    }
+    &__subtitle {
+      font-size: 150%;
+    }
+  }
+  .translator__submit {
+    text-align: center;
+  }
+}

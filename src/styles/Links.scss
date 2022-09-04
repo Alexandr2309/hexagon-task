@@ -1,0 +1,58 @@
+.links {
+  margin-top: 76px;
+  padding-bottom: 47px;
+  &__wrapper {
+    padding: 34px 34px 55px 42px;
+    @extend %form-bg;
+  }
+
+  &__title {
+  }
+
+  &__table {
+  }
+  & h2 {
+    font: $title-font;
+    color: $main-text-color;
+    margin-top: 33px;
+    text-align: center;
+    font-weight: 800;
+  }
+}
+
+.table {
+  &-links {
+    font: $table-font;
+    color: $main-text-color;
+    width: 100%;
+    border-collapse: separate;
+    margin-top: 33px;
+    & th,
+    td {
+      border-style: solid;
+      border-width: 0px 1px 1px 0px;
+      border-color: rgba(0, 0, 0, 0.51);
+      text-align: center;
+      padding: 22px 0px;
+      &:first-child {
+        border-left-width: 1px;
+      }
+    }
+    & th {
+      font-weight: 500;
+      border-top-width: 1px;
+      &:first-child {
+        border-top-left-radius: 23px;
+      }
+      &:last-child {
+        border-top-right-radius: 23px;
+      }
+    }
+    & tr:last-child td:first-child {
+      border-radius: 0 0 0 23px;
+    }
+    & tr:last-child td:last-child {
+      border-radius: 0 0 23px 0;
+    }
+  }
+}

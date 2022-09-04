@@ -1,0 +1,56 @@
+@import './reset';
+@import './config';
+@import './fonts';
+@import './Main';
+@import './Footer';
+@import './Header';
+@import './Links';
+@import './Auth';
+
+body {
+  margin: 0;
+  font-family: $main-font-family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: $main-bg;
+  min-height: 100vh;
+}
+.main-btn {
+  border: none;
+  transition: all .25s ease;
+  @extend  %btn-template;
+}
+@media (min-width: 300px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+@media (min-width: 575.98px) {
+  .container {
+    padding: 0 calc(50% - 270px);
+  }
+}
+
+@media (min-width: 767.98px) {
+  .container {
+    padding: 0 calc(50% - 355px);
+  }
+}
+
+@media (min-width: 991.98px) {
+  .container {
+    padding: 0 calc(50% - 475px);
+  }
+}
+
+@media (min-width: 1199.98px) {
+  .container {
+    padding: 0 calc(50% - 585px);
+  }
+}
+@media (min-width: 0px) {
+  .container {
+    min-height: 100%;
+    overflow: hidden;
+  }
+}
