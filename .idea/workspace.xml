@@ -2,17 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd08cea9-9d18-4e4f-a165-b0a5a523293d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/LinksTable/MainTable.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LinksTable/TableHead.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LinksTable/TableRow.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Translator/TranslatorForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/DialogUI.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/Loader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/Modal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/Pagination/Pagination.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/Pagination/PaginationLink.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/SnackbarUI.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/constants.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useProgress.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/axios.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/axios.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/request.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/request.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/About/MainAbout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/About/MainAbout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Authentication/Authentication.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Authentication/Authentication.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/HeaderLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/HeaderLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/IsAuth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/IsAuth.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LinksTable/LinksTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LinksTable/LinksTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LinksTable/MainTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LinksTable/MainTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LinksTable/TableHead.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LinksTable/TableHead.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LinksTable/TableRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LinksTable/TableRow.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Translator/LinkTranslator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Translator/LinkTranslator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/MyButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/MyButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/info.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/info.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/user/userSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/user/userSlice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/UserLinks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/UserLinks.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/Links.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Links.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/types/commonTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/commonTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/propsTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/propsTypes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/helperFuns.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/helperFuns.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +46,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/node_modules/axios/index.d.ts" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -41,26 +73,26 @@
     "last_opened_file_path": "D:/Programming/hexagon-task/src/components/About/MainAbout.tsx",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "D:\\Projects\\hexagon-task\\node_modules\\prettier",
+    "prettierjs.PrettierConfiguration.Package": "D:\\Programming\\hexagon-task\\node_modules\\prettier",
     "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "D:\\Projects\\hexagon-task\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "D:\\Programming\\hexagon-task\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programming\hexagon-task\src\components\UI\Pagination" />
       <recent name="D:\Programming\hexagon-task\src" />
       <recent name="D:\Programming\hexagon-task\src\components\Layout" />
       <recent name="D:\Programming\hexagon-task\public" />
       <recent name="D:\Programming\hexagon-task\src\routes" />
-      <recent name="D:\Programming\hexagon-task\src\styles" />
     </key>
     <key name="es6.move.members.recent.items">
+      <recent name="D:\Programming\hexagon-task\src\components\Translator\TranslatorForm.tsx" />
       <recent name="D:\Projects\hexagon-task\src\components\LinksTable\TableRow.tsx" />
       <recent name="D:\Projects\hexagon-task\src\components\LinksTable\TableHead.tsx" />
       <recent name="D:\Programming\hexagon-task\src\components\Authentication\AuthenticationLegend.tsx" />
       <recent name="D:\Programming\hexagon-task\src\components\Authentication\AuthenticationInputs.tsx" />
-      <recent name="D:\Programming\hexagon-task\src\components\Authentication\AuthenticationField.tsx" />
     </key>
   </component>
   <component name="RunManager">

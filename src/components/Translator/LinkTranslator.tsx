@@ -1,40 +1,42 @@
-import React, { FC, FormEvent, FormEventHandler } from 'react';
+import React, { FC, FormEvent, useState } from 'react';
 import useInput from '../../hooks/useInput';
-import MyButton from '../UI/MyButton';
-
-function TranslatorForm(props: {
-  onSubmit: (e: FormEvent<HTMLFormElement>) => void;
-  input: {
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    value: string;
-  };
-}) {
-  return (
-    <form action='#' name='translator' onSubmit={props.onSubmit}>
-      <legend className='translator__title'>
-        Введите URL-ссылку для преобразования:{' '}
-      </legend>
-      <div className='translator__field'>
-        <input type='text' {...props.input} />
-      </div>
-      <div className='translator__submit'>
-        <MyButton text='Создать' type='submit' />
-      </div>
-    </form>
-  );
-}
+import { useNavigate } from 'react-router-dom';
+import { getCookie, validateUserAndLink } from '../../utils/helperFuns';
+import { squeeze } from '../../api/request';
+import { useAppDispatch } from '../../app/hooks';
+import DialogUI from '../UI/DialogUI';
+import { TranslatorForm } from './TranslatorForm';
+import { IValidateUserAndLink } from '../../types/commonTypes';
+import { API_URL } from '../../data/constants';
 
 const LinkTranslator: FC = () => {
-  const input = useInput();
+  const [shortLink, setShortLink] = useState<string>('');
+  const [openModal, setOpenModal] = useState<boolean>(false);
 
-  const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
+  const input = useInput();
+  const na = useNavigate();
+  const dispatch = useAppDispatch();
+
+  const onSubmitHandler = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (validateUserAndLink(na, input.value) === false) return;
+
+    const response = await squeeze(input.value, dispatch);
+
+    setShortLink(`${API_URL}s/${response}`);
+    setOpenModal(true);
   };
 
   return (
-    <div className='main__translator translator'>
-      <div className='translator__wrapper form-wrap'>
+    <div className="main__translator translator">
+      <div className="translator__wrapper form-wrap">
         <TranslatorForm onSubmit={onSubmitHandler} input={input} />
+        <DialogUI
+          shortLink={shortLink}
+          setOpen={setOpenModal}
+          open={openModal}
+        />
       </div>
     </div>
   );

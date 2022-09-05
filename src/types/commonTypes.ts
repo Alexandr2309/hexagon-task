@@ -1,3 +1,6 @@
+import { useNavigate } from 'react-router-dom';
+import { AppDispatch } from '../app/store';
+
 export interface ILink {
   id: number;
   short: string;
@@ -12,6 +15,21 @@ export interface IUserState {
 }
 
 export interface IDataFields {
-  username: string
-  password: string
+  username: string;
+  password: string;
+}
+
+export interface IValidateUserAndLink {
+  (na: ReturnType<typeof useNavigate>, value: string): boolean;
+}
+export interface IRegistration {
+  (username: string, password: string, dispatch: AppDispatch): Promise<string>;
+}
+export interface ILogin {
+  (
+    username: string,
+    password: string,
+    dispatch: AppDispatch,
+    update?: boolean
+  ): void;
 }

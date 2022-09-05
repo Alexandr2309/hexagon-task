@@ -1,9 +1,6 @@
 import React, { FC } from 'react';
 import Header from './Header';
-
-interface IHeaderLayout {
-  children: React.ReactElement | React.ReactNode;
-}
+import { IHeaderLayout } from '../../types/propsTypes';
 
 const HeaderLayout: FC<IHeaderLayout> = ({ children }) => {
   return (

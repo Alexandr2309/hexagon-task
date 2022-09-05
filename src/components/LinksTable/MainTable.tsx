@@ -1,23 +1,22 @@
-import React, { FC, Fragment, useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { getStatistics } from '../../api/request';
+import React, { FC, useMemo } from 'react';
+import { useAppSelector } from '../../app/hooks';
 import { TableRow } from './TableRow';
 
-const MainTable: FC = () => {
+const MainTable: FC<{page: number}> = ({page}) => {
   const links = useAppSelector((state) => state.user.links);
-  const dispatch = useAppDispatch();
-  useEffect(() => {
-    if (links.length !== 0) {
-      getStatistics(dispatch, true);
-    }
-  }, []);
+
+  const linksPortion = useMemo(() => {
+    if(page === 1) return links.slice(0, 7);
+
+    return links.slice((page - 1) * 7, (page - 1) * 7 * 2);
+  }, [page]);
 
   return (
-    <>
-      {links.map((link) => (
+    <tbody>
+      {linksPortion.map((link) => (
         <TableRow link={link} key={link.id} />
       ))}
-    </>
+    </tbody>
   );
 };
 

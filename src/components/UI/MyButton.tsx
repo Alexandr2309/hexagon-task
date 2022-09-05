@@ -1,14 +1,10 @@
 import React, { FC } from 'react';
-
-interface IMyButton {
-  text: string;
-  type?: 'button' | 'submit' | 'reset' | undefined;
-}
+import { IMyButton } from '../../types/propsTypes';
 
 const MyButton: FC<IMyButton> = ({ text, type = 'button' }) => {
   return (
     <button
-      className='main-btn'
+      className="main-btn"
       type={type}
       dangerouslySetInnerHTML={{ __html: text }}
     />

@@ -1,7 +1,7 @@
 import MainPage from '../pages/MainPage';
 import UserLinks from '../pages/UserLinks';
 import React from 'react';
-import { RouteObject, useRoutes } from 'react-router-dom';
+import { Navigate, RouteObject, useRoutes } from 'react-router-dom';
 import Layout from '../components/Layout/Layout';
 import Register from '../pages/Register';
 import Login from '../pages/Login';
@@ -22,6 +22,10 @@ export const routes: RouteObject[] = [
   {
     path: '/login',
     element: <Login />,
+  },
+  {
+    path: '*',
+    element: <Navigate to="/" replace />,
   },
 ];
 

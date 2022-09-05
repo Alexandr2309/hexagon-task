@@ -2,17 +2,22 @@ import axios from './axios';
 import apiRoutes from '../data/apiPath';
 import { AxiosResponse } from 'axios';
 import { changeLoading } from '../features/progress/progressSlice';
-import { addLink, changeAuth, setLinks } from '../features/user/userSlice';
+import {
+  addLink,
+  addSomeLinks,
+  changeAuth,
+  setLinks,
+} from '../features/user/userSlice';
 import { AppDispatch } from '../app/store';
-import { getCookie, setCookie } from '../utils/helperFuns';
-import { ILink } from '../types/commonTypes';
-
-interface IRegistration {
-  (username: string, password: string, dispatch: AppDispatch): Promise<string>;
-}
-interface ILogin {
-  (username: string, password: string, dispatch: AppDispatch): void;
-}
+import {
+  decryptPassword,
+  getCookie,
+  setCookie,
+  setUserInfoCookie,
+  throwAndLogError,
+} from '../utils/helperFuns';
+import { ILink, ILogin, IRegistration } from '../types/commonTypes';
+const CryptoJs = require('crypto-js');
 
 export const registration: IRegistration = async (
   username,
@@ -30,33 +35,42 @@ export const registration: IRegistration = async (
 
     return res.data.username;
   } catch (e) {
-    console.log((e as Error).message);
-    throw new Error((e as Error).message);
+    throwAndLogError(e as Error);
   } finally {
     dispatch(changeLoading(false));
   }
 };
 
-export const login: ILogin = async (username, password, dispatch) => {
-  const params = new URLSearchParams();
-  params.append('username', username);
-  params.append('password', password);
+export const getLogin = (params : URLSearchParams ) => {
+  return axios.post(apiRoutes.login, params, {
+    headers: {
+      'content-type': 'application/x-www-form-urlencoded',
+    },
+  })
+}
+
+export const login: ILogin = async (
+  username,
+  password,
+  dispatch,
+  update = false
+) => {
+  dispatch(changeLoading(true));
 
   try {
-    dispatch(changeLoading(true));
-    const { data } = await axios.post(apiRoutes.login, params, {
-      headers: {
-        'content-type': 'application/x-www-form-urlencoded',
-      },
-    });
+    const params = new URLSearchParams();
+    params.append('username', username);
+    params.append('password', password);
 
+    const { data } = await getLogin(params);
     setCookie('token', `${data.token_type} ${data.access_token}`);
-    dispatch(changeAuth({ auth: true, username }));
 
-    getStatistics(dispatch, false);
+    if (update === false) {
+      setUserInfoCookie(password, username);
+      dispatch(changeAuth({ auth: true, username }));
+    }
   } catch (e) {
-    console.log((e as Error).message);
-    throw new Error((e as Error).message);
+    throwAndLogError(e as Error);
   } finally {
     dispatch(changeLoading(false));
   }
@@ -65,14 +79,19 @@ export const login: ILogin = async (username, password, dispatch) => {
 export const squeeze = async (
   link: string,
   dispatch: AppDispatch
-): Promise<string> => {
+): Promise<string | undefined> => {
   try {
     dispatch(changeLoading(true));
+
+    const username = getCookie('username') as string;
+    const password = decryptPassword();
+
+    await login(username, password, dispatch, true);
+
     const response = await axios.post(
-      apiRoutes.create,
+      `${apiRoutes.create}?link=${link}`,
       {},
       {
-        params: link,
         headers: {
           Authorization: getCookie('token') as string,
         },
@@ -84,11 +103,37 @@ export const squeeze = async (
 
     return resLink.short;
   } catch (e) {
-    console.log((e as Error).message);
-    throw new Error((e as Error).message);
+    throwAndLogError(e as Error);
   } finally {
     dispatch(changeLoading(false));
   }
+};
+
+function getPortionLinks(num: number) {
+  return axios.get(apiRoutes.stats, {
+    params: { limit: 7, offset: num * 7 },
+    headers: {
+      Authorization: getCookie('token') as string,
+    },
+  });
+}
+
+function getFirstStats() {
+  return axios.get(apiRoutes.stats, {
+    params: { limit: 7 },
+    headers: {
+      Authorization: getCookie('token') as string,
+    },
+  });
+}
+
+export const getRemainingStats = async (num: number, dispatch: AppDispatch) => {
+  getPortionLinks(num).then(({ data }) => {
+    if (data.length === 0) return;
+
+    dispatch(addSomeLinks(data));
+    getRemainingStats(num + 1, dispatch);
+  });
 };
 
 export const getStatistics = async (
@@ -96,21 +141,22 @@ export const getStatistics = async (
   onLoad: boolean = false
 ): Promise<any> => {
   try {
-    if (onLoad === true) dispatch(changeLoading(true));
+    if (onLoad === true) {
+      dispatch(changeLoading(true));
 
-    const response = await axios.get(apiRoutes.stats, {
-      headers: {
-        Authorization: getCookie('token') as string,
-      },
-    });
+      const username = getCookie('username') as string;
+      const password = decryptPassword();
 
-    if (onLoad === true) dispatch(changeLoading(false));
+      await login(username, password, dispatch);
+    }
+
+    const response = await getFirstStats();
 
     dispatch(setLinks(response.data));
-
+    getRemainingStats(1, dispatch);
   } catch (e) {
-    console.log((e as Error).message);
-    throw new Error((e as Error).message);
+    throwAndLogError(e as Error);
   } finally {
+    if (onLoad === true) dispatch(changeLoading(false));
   }
 };

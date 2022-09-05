@@ -3,6 +3,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  &__leave{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    & h3 {
+    }
+    & button {
+      border: none;
+      background: none;
+      color: red;
+      padding: 5px;
+      transition: all .15s ease;
+      &:hover {
+        text-shadow: 3px 0px 10px rgba(0, 0 ,0, .3);
+      }
+      font: $main-font
+    }
+  }
   &__logo {
     gap: 24px;
     display: flex;
