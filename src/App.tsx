@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import RoutesPath from './routes/routes';
-import { useAppSelector } from './app/hooks';
+import { useAppDispatch, useAppSelector } from './app/hooks';
 import LoadingBar from 'react-top-loading-bar';
+import { deleteCookie, getCookie } from './utils/helperFuns';
+import { changeAuth } from './features/user/userSlice';
 
 function App() {
   const isLoading = useAppSelector((state) => state.progress.isLoading);
+  const dispatch = useAppDispatch();
+
   const [progress, setProgress] = useState<number>(0);
 
   useEffect(() => {
@@ -19,6 +23,17 @@ function App() {
       setProgress(100);
     };
   }, [isLoading]);
+
+  useEffect(() => {
+    const token = getCookie('token');
+    if (token !== '') {
+      dispatch(changeAuth({ auth: true, username: '' }));
+    }
+    return function () {
+      console.log('end');
+      window.addEventListener('beforeunload', deleteCookie.bind(null, 'token'));
+    };
+  }, []);
 
   return (
     <>

@@ -2,58 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd08cea9-9d18-4e4f-a165-b0a5a523293d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/About/MainAbout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Authentication/Authentication.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Authentication/AuthenticationInputs.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Authentication/AuthenticationLegend.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/CollapsedMenu.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/ExpandedMenu.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/Header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/HeaderLayout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/IsAuth.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/Layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LinksTable/LinksTable.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Translator/LinkTranslator.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/MyButton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/apiPath.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/info.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/progress/progressSlice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/user/userSlice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useInput.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useWindowSize.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Register.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/UserLinks.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/routes.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/Auth.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/Footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/Header.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/Links.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/Main.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/fonts.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/reset.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/commonTypes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/propsTypes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/helperFuns.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/path.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/LinksTable/MainTable.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/LinksTable/TableHead.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/LinksTable/TableRow.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/counter/Counter.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/counter/Counter.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/counter/counterAPI.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/counter/counterSlice.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/counter/counterSlice.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MainPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/axios.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/request.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/config.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/config.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/var.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/var.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/axios.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/axios.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/request.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/request.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LinksTable/LinksTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LinksTable/LinksTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/UserLinks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/UserLinks.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Links.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Links.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/commonTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/commonTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/helperFuns.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/helperFuns.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,9 +22,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/node_modules/axios/index.d.ts" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -84,9 +41,9 @@
     "last_opened_file_path": "D:/Programming/hexagon-task/src/components/About/MainAbout.tsx",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "D:\\Programming\\hexagon-task\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "D:\\Programming\\hexagon-task\\node_modules\\typescript\\lib",
+    "prettierjs.PrettierConfiguration.Package": "D:\\Projects\\hexagon-task\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "D:\\Projects\\hexagon-task\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -99,10 +56,11 @@
       <recent name="D:\Programming\hexagon-task\src\styles" />
     </key>
     <key name="es6.move.members.recent.items">
+      <recent name="D:\Projects\hexagon-task\src\components\LinksTable\TableRow.tsx" />
+      <recent name="D:\Projects\hexagon-task\src\components\LinksTable\TableHead.tsx" />
       <recent name="D:\Programming\hexagon-task\src\components\Authentication\AuthenticationLegend.tsx" />
       <recent name="D:\Programming\hexagon-task\src\components\Authentication\AuthenticationInputs.tsx" />
       <recent name="D:\Programming\hexagon-task\src\components\Authentication\AuthenticationField.tsx" />
-      <recent name="D:\Programming\hexagon-task\src\components\About\MainAbout.tsx" />
     </key>
   </component>
   <component name="RunManager">

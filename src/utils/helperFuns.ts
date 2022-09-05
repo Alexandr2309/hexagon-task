@@ -1,4 +1,4 @@
-export function getCookie(name: string) {
+export function getCookie(name: string): string | undefined {
   let matches = document.cookie.match(
     new RegExp(
       '(?:^|; )' +
