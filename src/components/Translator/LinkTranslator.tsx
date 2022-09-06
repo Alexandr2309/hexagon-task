@@ -1,12 +1,11 @@
 import React, { FC, FormEvent, useState } from 'react';
 import useInput from '../../hooks/useInput';
 import { useNavigate } from 'react-router-dom';
-import { getCookie, validateUserAndLink } from '../../utils/helperFuns';
+import { validateUserAndLink } from '../../utils/helperFuns';
 import { squeeze } from '../../api/request';
 import { useAppDispatch } from '../../app/hooks';
 import DialogUI from '../UI/DialogUI';
 import { TranslatorForm } from './TranslatorForm';
-import { IValidateUserAndLink } from '../../types/commonTypes';
 import { API_URL } from '../../data/constants';
 
 const LinkTranslator: FC = () => {

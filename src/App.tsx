@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import RoutesPath from './routes/routes';
 import { useAppDispatch, useAppSelector } from './app/hooks';
 import LoadingBar from 'react-top-loading-bar';
-import { deleteCookie, getCookie } from './utils/helperFuns';
+import { getCookie } from './utils/helperFuns';
 import { changeAuth } from './features/user/userSlice';
 import useProgress from './hooks/useProgress';
 

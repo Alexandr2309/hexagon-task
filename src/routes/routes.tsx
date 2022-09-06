@@ -5,22 +5,23 @@ import { Navigate, RouteObject, useRoutes } from 'react-router-dom';
 import Layout from '../components/Layout/Layout';
 import Register from '../pages/Register';
 import Login from '../pages/Login';
+import { RoutesPaths } from '../types/commonTypes';
 
 export const routes: RouteObject[] = [
   {
-    path: '/',
+    path: RoutesPaths.main,
     element: <Layout />,
     children: [
       { element: <MainPage />, index: true },
-      { path: 'links', element: <UserLinks /> },
+      { path: RoutesPaths.links, element: <UserLinks /> },
     ],
   },
   {
-    path: '/register',
+    path: RoutesPaths.register,
     element: <Register />,
   },
   {
-    path: '/login',
+    path: RoutesPaths.login,
     element: <Login />,
   },
   {

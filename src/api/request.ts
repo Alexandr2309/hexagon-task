@@ -12,11 +12,19 @@ import { AppDispatch } from '../app/store';
 import {
   decryptPassword,
   getCookie,
+  getParams,
   setCookie,
   setUserInfoCookie,
   throwAndLogError,
 } from '../utils/helperFuns';
 import { ILink, ILogin, IRegistration } from '../types/commonTypes';
+import {
+  getFirstStats,
+  getLogin,
+  getPortionLinks,
+  getRegistration,
+  getSqueezeLink,
+} from './reqOperation';
 const CryptoJs = require('crypto-js');
 
 export const registration: IRegistration = async (
@@ -27,11 +35,8 @@ export const registration: IRegistration = async (
   const params = { username, password };
   try {
     dispatch(changeLoading(true));
-    const res: AxiosResponse = await axios.post(
-      apiRoutes.register,
-      {},
-      { params }
-    );
+
+    const res: AxiosResponse = await getRegistration(params);
 
     return res.data.username;
   } catch (e) {
@@ -40,14 +45,6 @@ export const registration: IRegistration = async (
     dispatch(changeLoading(false));
   }
 };
-
-export const getLogin = (params : URLSearchParams ) => {
-  return axios.post(apiRoutes.login, params, {
-    headers: {
-      'content-type': 'application/x-www-form-urlencoded',
-    },
-  })
-}
 
 export const login: ILogin = async (
   username,
@@ -58,9 +55,7 @@ export const login: ILogin = async (
   dispatch(changeLoading(true));
 
   try {
-    const params = new URLSearchParams();
-    params.append('username', username);
-    params.append('password', password);
+    const params = getParams(username, password);
 
     const { data } = await getLogin(params);
     setCookie('token', `${data.token_type} ${data.access_token}`);
@@ -88,15 +83,7 @@ export const squeeze = async (
 
     await login(username, password, dispatch, true);
 
-    const response = await axios.post(
-      `${apiRoutes.create}?link=${link}`,
-      {},
-      {
-        headers: {
-          Authorization: getCookie('token') as string,
-        },
-      }
-    );
+    const response = await getSqueezeLink(link);
 
     const resLink: ILink = response.data;
     dispatch(addLink(resLink));
@@ -108,24 +95,6 @@ export const squeeze = async (
     dispatch(changeLoading(false));
   }
 };
-
-function getPortionLinks(num: number) {
-  return axios.get(apiRoutes.stats, {
-    params: { limit: 7, offset: num * 7 },
-    headers: {
-      Authorization: getCookie('token') as string,
-    },
-  });
-}
-
-function getFirstStats() {
-  return axios.get(apiRoutes.stats, {
-    params: { limit: 7 },
-    headers: {
-      Authorization: getCookie('token') as string,
-    },
-  });
-}
 
 export const getRemainingStats = async (num: number, dispatch: AppDispatch) => {
   getPortionLinks(num).then(({ data }) => {

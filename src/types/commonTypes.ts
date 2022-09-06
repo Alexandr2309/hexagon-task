@@ -33,3 +33,10 @@ export interface ILogin {
     update?: boolean
   ): void;
 }
+
+export const enum RoutesPaths {
+  main = '/',
+  register = '/register',
+  login = '/login',
+  links = 'links',
+}

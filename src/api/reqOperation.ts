@@ -31,3 +31,18 @@ export const getSqueezeLink = (link: string) => {
     }
   );
 };
+
+export const getLogin = (params: URLSearchParams) => {
+  return axios.post(apiRoutes.login, params, {
+    headers: {
+      'content-type': 'application/x-www-form-urlencoded',
+    },
+  });
+};
+
+export const getRegistration = (params: {
+  username: string;
+  password: string;
+}) => {
+  return axios.post(apiRoutes.register, {}, { params });
+};

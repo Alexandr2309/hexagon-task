@@ -58,3 +58,11 @@ export function throwAndLogError(e: Error) {
   console.log((e as Error).message);
   throw new Error((e as Error).message);
 }
+
+export const getParams = (username: string, password: string) => {
+  const params = new URLSearchParams();
+  params.append('username', username);
+  params.append('password', password);
+
+  return params;
+};
